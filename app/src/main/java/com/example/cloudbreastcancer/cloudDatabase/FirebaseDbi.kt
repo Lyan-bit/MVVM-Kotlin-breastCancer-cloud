@@ -39,6 +39,7 @@ class FirebaseDbi() {
                     locals.addAll(Classification.ClassificationAllInstances)
                     for (x in locals) {
                         if (keys.contains(x.id)) {
+                            //check
                         } else {
                             Classification.killClassification(x.id)
                         }
