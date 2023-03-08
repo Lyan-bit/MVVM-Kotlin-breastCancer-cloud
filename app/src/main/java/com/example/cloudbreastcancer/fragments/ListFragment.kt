@@ -22,8 +22,6 @@ class ListFragment : Fragment() {
     private lateinit var myContext: Context
     private lateinit var model: CrudViewModel
 
-    fun listBondFragment() {}
-
     companion object {
         const val ARG_COLUMN_COUNT = "column-count"
         fun newInstance(c: Context): ListFragment {
@@ -44,7 +42,6 @@ class ListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.list_layout, container, false)
         model = CrudViewModel.getInstance(myContext)
-        val data = arguments
 
         if (view is RecyclerView) {
             val context = view.getContext()
