@@ -42,7 +42,8 @@ class FileAccessor (context: Context) {
                     outStrm.write(item + "\n")
                 }
             }
-            catch (ix: IOException) { }
+            catch (ix: IOException) {
+            ix.printStackTrace()}
             outStrm.close()
         }
         catch (e: Exception) { e.printStackTrace() }
