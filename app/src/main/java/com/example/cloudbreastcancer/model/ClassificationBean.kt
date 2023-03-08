@@ -93,63 +93,54 @@ class ClassificationBean(c: Context) {
 
         try {
             done = one.toFloat()
-//            done = (done - 24) / (89 - 24)
         } catch (e: Exception) {
             errors.add("one is not a float")
         }
 
         try {
             dtwo = two.toFloat()
-//            dtwo = (dtwo - 18.37f) / (38.5787585f - 18.37f)
         } catch (e: Exception) {
             errors.add("two is not a float")
         }
 
         try {
             dthree = three.toFloat()
-//            dthree = (dthree - 60) / (201 - 60)
         } catch (e: Exception) {
             errors.add("three is not a float")
         }
 
         try {
             dfour = four.toFloat()
-//            dfour = (dfour - 2.432f) / (58.46f - 2.432f)
         } catch (e: Exception) {
             errors.add("four is not a float")
         }
 
         try {
             dfive = five.toFloat()
-//            dfive = (dfive - 4.311f) / (90.28f - 4.311f)
         } catch (e: Exception) {
             errors.add("five is not a float")
         }
 
         try {
             dsix = six.toFloat()
-//            dsix = (dsix - 1.6502f) / (38.04f - 1.6502f)
         } catch (e: Exception) {
             errors.add("six is not a float")
         }
 
         try {
             dseven = seven.toFloat()
-//            dseven = (dseven - 3.21f) / (82.1f - 3.21f)
         } catch (e: Exception) {
             errors.add("seven is not a float")
         }
 
         try {
             deight = eight.toFloat()
-//            deight = (deight - 45.843f) / (1698.44f - 45.843f)
         } catch (e: Exception) {
             errors.add("eight is not a float")
         }
 
         try {
             dnine = nine.toFloat()
-//            dnine = (dnine - 45.843f) / (1698.44f - 45.843f)
         } catch (e: Exception) {
             errors.add("nine is not a float")
         }
@@ -167,7 +158,6 @@ class ClassificationBean(c: Context) {
     }
 
     fun createClassification () {
-        //Log.i("data:", done.toString() )
         model.createClassification (ClassificationVO(done, dtwo, dthree, dfour, dfive, dsix, dseven, deight, dnine, result, id))
         resetData()
     }
