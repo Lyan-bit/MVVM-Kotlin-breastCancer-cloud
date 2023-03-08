@@ -64,7 +64,6 @@ class CreateFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         root = inflater.inflate(R.layout.create_layout, container, false)
-        val data = arguments
 
         classificationBean = ClassificationBean(myContext)
 
@@ -97,6 +96,7 @@ class CreateFragment : Fragment(), View.OnClickListener {
         try {
             imm.hideSoftInputFromWindow(v.windowToken, 0)
         } catch (e: Exception) {
+            e.printStackTrace()
         }
         when (v.id) {
             R.id.diagnoseCreate -> {
