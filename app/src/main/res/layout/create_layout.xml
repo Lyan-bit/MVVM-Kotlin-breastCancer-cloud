@@ -142,14 +142,6 @@
                 android:layout_span="4" />
         </TableRow>
         <TableRow>
-            <!--                <Button-->
-            <!--                    android:id="@+id/diagnoseOK"-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_column="1"-->
-            <!--                    android:background="#AAAAFF"-->
-            <!--                    android:text="Classify"-->
-            <!--                    android:onClick="diagnoseOK"/>-->
             <Button
                 android:id="@+id/diagnoseCreate"
                 android:layout_width="wrap_content"
