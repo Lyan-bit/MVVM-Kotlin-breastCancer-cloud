@@ -46,7 +46,9 @@ class FirebaseDbi() {
                 }
             }
 
-            override fun onCancelled(databaseError: DatabaseError) {}
+            override fun onCancelled(databaseError: DatabaseError) {
+            //cancel
+            }
         }
         database!!.child("classifications").addValueEventListener(classificationListener)
     }
