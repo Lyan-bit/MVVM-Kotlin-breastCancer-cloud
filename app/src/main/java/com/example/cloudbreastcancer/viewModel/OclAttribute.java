@@ -8,8 +8,7 @@ class OclAttribute {
   { name = nme; }
 
   static OclAttribute createOclAttribute()
-  { OclAttribute result = new OclAttribute();
-    return result;
+  { return new OclAttribute();
   }
 
   public void setType(OclType t)
