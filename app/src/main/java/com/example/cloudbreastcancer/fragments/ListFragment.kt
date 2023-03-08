@@ -45,7 +45,6 @@ class ListFragment : Fragment() {
 
         if (view is RecyclerView) {
             val context = view.getContext()
-            val recyclerView = view
             if (mColumnCount <= 1) {
                 view.layoutManager = LinearLayoutManager(context)
             } else {
