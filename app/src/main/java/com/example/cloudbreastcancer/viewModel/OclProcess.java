@@ -79,7 +79,9 @@ class OclProcess
     else
     { try
       { p.process = Runtime.getRuntime().exec(s); }
-      catch (Exception e) { }
+      catch (Exception e) { 
+      //e
+      }
     }
     return p;
   }
