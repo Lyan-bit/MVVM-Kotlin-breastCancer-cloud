@@ -40,7 +40,9 @@ class OclProcess
 
   public static void wait(Object obj, double t)
   { try { obj.wait((long) t); }
-    catch (Exception e) { }
+    catch (Exception e) {
+    //e
+    }
   }
 
   public int waitFor()
