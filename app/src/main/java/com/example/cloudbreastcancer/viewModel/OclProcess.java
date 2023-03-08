@@ -13,8 +13,7 @@ class OclProcess
   OclProcess() { OclProcessAllInstances.add(this); }
 
   static OclProcess createOclProcess()
-  { OclProcess result = new OclProcess();
-    return result; }
+  { OclProcessnew OclProcess(); }
 
   String name = "";
   int priority = 5;
