@@ -1,4 +1,3 @@
-package com.example.dietpro;
 package com.example.cloudbreastcancer.viewModel;
 
 class OclAttribute {
