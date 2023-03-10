@@ -1,19 +1,21 @@
 package com.example.cloudbreastcancer.viewModel;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.HashMap;
-import java.util.Properties;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
 class OclProcess
-{ static ArrayList<OclProcess> OclProcessAllInstances = new ArrayList<OclProcess>();
+{ static ArrayList<OclProcess> oclProcessAllInstances = new ArrayList<OclProcess>();
 
-  OclProcess() { OclProcessAllInstances.add(this); }
+  OclProcess() { oclProcessAllInstances.add(this); }
 
   static OclProcess createOclProcess()
-  { OclProcessnew OclProcess(); }
+  { 
+  	return new OclProcess();
+  }
 
   String name = "";
   int priority = 5;
@@ -40,8 +42,8 @@ class OclProcess
 
   public static void wait(Object obj, double t)
   { try { obj.wait((long) t); }
-    catch (Exception e) {
-    //e
+    catch (Exception e)     { 
+    	//catch
     }
   }
 
@@ -79,9 +81,9 @@ class OclProcess
     else
     { try
       { p.process = Runtime.getRuntime().exec(s); }
-      catch (Exception e) { 
-      //e
-      }
+      catch (Exception e)     { 
+    	//catch
+    }
     }
     return p;
   }
@@ -114,8 +116,9 @@ class OclProcess
 
   public static void sleep(long n)
   { try { Thread.sleep(n); }
-    catch (Exception e) {
-      //e
+    catch (Exception e)
+        { 
+    	//catch
     }
   }
 
@@ -168,7 +171,9 @@ class OclProcess
   public void join(double ms)
   { if (actualThread != null)
     { try { actualThread.join((long) ms); }
-      catch (Exception e) { }
+      catch (Exception e)     { 
+    	//catch
+    }
     }
   }
 
@@ -189,8 +194,8 @@ class OclProcess
   }
 
 
-  public static String getEnvironmentProperty(String var)
-  { return System.getProperty(var); }
+  public static String getEnvironmentProperty(String value)
+  { return System.getProperty(value); }
 
 
   public static HashMap<String,String> getEnvironmentProperties()
