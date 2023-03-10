@@ -1,8 +1,5 @@
 package com.example.cloudbreastcancer.viewModel; // Place in the relevant package directory of your application.
 
-package com.example.dietpro; // Place in the relevant package directory of your application.
-
-
 /******************************
 * Copyright (c) 2003--2022 Kevin Lano
 * This program and the accompanying materials are made available under the
