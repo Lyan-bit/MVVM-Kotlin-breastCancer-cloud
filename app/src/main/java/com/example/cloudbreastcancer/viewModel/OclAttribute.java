@@ -1,14 +1,18 @@
+package com.example.dietpro;
 package com.example.cloudbreastcancer.viewModel;
 
 class OclAttribute {
 
-  OclAttribute() { }
+  OclAttribute()     { 
+    	//catch
+    }
 
   OclAttribute(String nme)
   { name = nme; }
 
   static OclAttribute createOclAttribute()
-  { return new OclAttribute();
+  { 
+  	return new OclAttribute();
   }
 
   public void setType(OclType t)
@@ -24,4 +28,5 @@ class OclAttribute {
   { return type; }
 
 }
+
 
