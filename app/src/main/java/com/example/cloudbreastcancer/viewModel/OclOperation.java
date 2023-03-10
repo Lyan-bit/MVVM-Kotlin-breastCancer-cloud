@@ -3,7 +3,9 @@ package com.example.cloudbreastcancer.viewModel;
 import java.util.ArrayList;
 
 class OclOperation
-{ OclOperation() { }
+{ OclOperation()     { 
+    	//catch
+    }
 
   OclOperation(String nme)
   { name = nme; }
