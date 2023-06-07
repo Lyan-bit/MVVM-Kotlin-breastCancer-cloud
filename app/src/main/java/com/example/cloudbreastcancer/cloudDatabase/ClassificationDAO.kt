@@ -16,7 +16,7 @@ class ClassificationDAO {
             if (command != null) {
                 res += command
             }
-            if (pars.size == 0) {
+            if (pars.isEmpty()) {
                 return res
             }
             res = "$res?"
@@ -32,12 +32,12 @@ class ClassificationDAO {
         }
 
         fun isCached(id: String?): Boolean {
-            Classification.ClassificationIndex.get(id) ?: return false
+            Classification.ClassificationIndex[id] ?: return false
             return true
         }
 
         fun getCachedInstance(id: String): Classification? {
-            return Classification.ClassificationIndex.get(id)
+            return Classification.ClassificationIndex[id]
         }
 
     fun parseCSV(line: String?): Classification? {
@@ -45,7 +45,7 @@ class ClassificationDAO {
             return null
         }
         val line1vals: ArrayList<String> = Ocl.tokeniseCSV(line)
-        var classificationx: Classification? = Classification.ClassificationIndex.get(line1vals[0])
+        var classificationx: Classification? = Classification.ClassificationIndex[line1vals[0]]
         if (classificationx == null) {
             classificationx = Classification.createByPKClassification(line1vals[0])
         }
@@ -69,7 +69,7 @@ class ClassificationDAO {
                 null
             } else try {
                 val id = obj.getString("id")
-                var classificationx: Classification? = Classification.ClassificationIndex.get(id)
+                var classificationx: Classification? = Classification.ClassificationIndex[id]
                 if (classificationx == null) {
                     classificationx = Classification.createByPKClassification(id)
                 }
@@ -98,7 +98,7 @@ class ClassificationDAO {
         val rows: ArrayList<String> = Ocl.parseCSVtable(lines)
         for (item in rows.indices) {
             val row = rows[item]
-            if (row == null || row.trim { it <= ' ' }.length == 0) {
+            if (row == null || row.trim { it <= ' ' }.isEmpty()) {
                 //trim
             } else {
                 val x: Classification? = parseCSV(row)
@@ -162,7 +162,7 @@ class ClassificationDAO {
             try {
                 val map = obj as HashMap<String, Object>
                 val id: String = map["id"].toString()
-                var classificationx: Classification? = Classification.ClassificationIndex.get(id)
+                var classificationx: Classification? = Classification.ClassificationIndex[id]
                 if (classificationx == null) {
                     classificationx = Classification.createByPKClassification(id)
                 }
