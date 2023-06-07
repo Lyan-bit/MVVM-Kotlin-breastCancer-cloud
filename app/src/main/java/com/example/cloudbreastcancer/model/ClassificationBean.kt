@@ -145,12 +145,12 @@ class ClassificationBean(c: Context) {
             errors.add("nine is not a float")
         }
 
-        return errors.size > 0
+        return errors.isNotEmpty()
     }
 
     fun islistClassificationError(): Boolean {
         errors.clear()
-        return errors.size > 0
+        return errors.isNotEmpty()
     }
 
     fun errors(): String {
