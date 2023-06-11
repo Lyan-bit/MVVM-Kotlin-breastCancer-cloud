@@ -46,17 +46,17 @@ class ClassificationViewModel (context: Context): ViewModel() {
             ex.printStackTrace()
         }
 
-        val done: Float = (classification.one - 24) / (89 - 24)
-        val dtwo = (classification.two - 18.37f) / (38.5787585f - 18.37f)
-        val dthree = (classification.three - 60) / (201 - 60)
-        val dfour = (classification.four - 2.432f) / (58.46f - 2.432f)
-        val dfive = (classification.five - 4.311f) / (90.28f - 4.311f)
-        val dsix = (classification.six - 1.6502f) / (38.04f - 1.6502f)
-        val dseven = (classification.seven - 3.21f) / (82.1f - 3.21f)
-        val deight = (classification.eight - 45.843f) / (1698.44f - 45.843f)
-        val dnine = (classification.nine - 45.843f) / (1698.44f - 45.843f)
-
-        val inputVal: FloatArray = floatArrayOf(done, dtwo, dthree, dfour, dfive, dsix, dseven,deight, dnine)
+        val inputVal: FloatArray = floatArrayOf(
+            ((classification.age - 24) / (89 - 24)).toFloat(),
+            ((classification.bmi - 18.37) / (38.5787585 - 18.37)).toFloat(),
+            ((classification.glucose - 60) / (201 - 60)).toFloat(),
+            ((classification.insulin - 2.432) / (58.46 - 2.432)).toFloat(),
+            ((classification.homa - 4.311) / (90.28 - 4.311)).toFloat(),
+            ((classification.leptin - 1.6502) / (38.4 - 1.6502)).toFloat(),
+            ((classification.adiponectin - 3.21) / (82.1 - 3.21)).toFloat(),
+            ((classification.resistin - 45.843) / (1698.44 - 45.843)).toFloat(),
+            ((classification.mcp - 45.843) / (1698.44 - 45.843)).toFloat()
+        )
         val outputVal: ByteBuffer = ByteBuffer.allocateDirect(8)
         outputVal.order(ByteOrder.nativeOrder())
 
@@ -74,7 +74,7 @@ class ClassificationViewModel (context: Context): ViewModel() {
         else
             res = "Result is positive"
 
-        classification.result = res
+        classification.outcome = res
         crudViewModel.persistClassification(classification)
 
         return res
