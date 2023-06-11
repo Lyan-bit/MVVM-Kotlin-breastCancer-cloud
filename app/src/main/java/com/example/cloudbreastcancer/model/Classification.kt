@@ -35,15 +35,15 @@ class Classification {
         }
     }
 
-    var one : Float = 0F
-    var two : Float = 0F
-    var three : Float = 0F
-    var four : Float = 0F
-    var five : Float = 0F
-    var six : Float = 0F
-    var seven : Float = 0F
-    var eight : Float = 0F
-    var nine : Float = 0F
-    var result = ""
-    var id = ""  /* primary */
+    var id = ""  /* identity */
+    var age = 0
+    var bmi = 0.0F
+    var glucose = 0.0F
+    var insulin = 0.0F
+    var homa = 0.0F
+    var leptin = 0.0F
+    var adiponectin = 0.0F
+    var resistin = 0.0F
+    var mcp = 0.0F
+    var outcome = ""  /* derived */
 }
