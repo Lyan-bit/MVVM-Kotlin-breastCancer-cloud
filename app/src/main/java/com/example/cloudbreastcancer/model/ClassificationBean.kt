@@ -5,151 +5,167 @@ import com.example.cloudbreastcancer.viewModel.CrudViewModel
 import java.lang.Exception
 
 class ClassificationBean(c: Context) {
+
     private var model: CrudViewModel = CrudViewModel.getInstance(c)
 
-    private var one : String = ""
-    private var done : Float = 0F
-    private var two : String = ""
-    private var dtwo : Float = 0F
-    private var three : String = ""
-    private var dthree : Float = 0F
-    private var four : String = ""
-    private var dfour : Float = 0F
-    private var five : String = ""
-    private var dfive : Float = 0F
-    private var six : String = ""
-    private var dsix : Float = 0F
-    private var seven : String = ""
-    private var dseven : Float = 0F
-    private var eight : String = ""
-    private var deight : Float = 0F
-    private var nine : String = ""
-    private var dnine : Float = 0F
-    private var result : String = ""
     private var id = ""
+    private var age = ""
+    private var dage = 0
+    private var bmi = ""
+    private var dbmi = 0.0F
+    private var glucose = ""
+    private var dglucose = 0.0F
+    private var insulin = ""
+    private var dinsulin = 0.0F
+    private var homa = ""
+    private var dhoma = 0.0F
+    private var leptin = ""
+    private var dleptin = 0.0F
+    private var adiponectin = ""
+    private var dadiponectin = 0.0F
+    private var resistin = ""
+    private var dresistin = 0.0F
+    private var mcp = ""
+    private var dmcp = 0.0F
+    private var outcome = ""
 
     private var errors = ArrayList<String>()
 
-    fun setone(x: String) {
-        one = x
+    fun setId(idx: String) {
+        id = idx
     }
 
-    fun settwo(x: String) {
-        two = x
+    fun setAge(agex: String) {
+        age = agex
     }
 
-    fun setthree(x: String) {
-        three = x
+    fun setBmi(bmix: String) {
+        bmi = bmix
     }
 
-    fun setfour(x: String) {
-        four = x
+    fun setGlucose(glucosex: String) {
+        glucose = glucosex
     }
 
-    fun setfive(x: String) {
-        five = x
+    fun setInsulin(insulinx: String) {
+        insulin = insulinx
     }
 
-    fun setsix(x: String) {
-        six = x
+    fun setHoma(homax: String) {
+        homa = homax
     }
 
-    fun setseven(x: String) {
-        seven = x
+    fun setLeptin(leptinx: String) {
+        leptin = leptinx
     }
 
-    fun seteight(x: String) {
-        eight = x
+    fun setAdiponectin(adiponectinx: String) {
+        adiponectin = adiponectinx
     }
 
-    fun setnine(x: String) {
-        nine = x
+    fun setResistin(resistinx: String) {
+        resistin = resistinx
     }
 
-    fun setresult(x: String) {
-        result = x
+    fun setMcp(mcpx: String) {
+        mcp = mcpx
     }
 
-    fun setid(x: String) {
-        id = x
+    fun setOutcome(outcomex: String) {
+        outcome = outcomex
     }
+
+
 
     fun resetData() {
-        one = ""
-        two = ""
-        three = ""
-        four = ""
-        five = ""
-        six = ""
-        seven = ""
-        eight = ""
-        nine = ""
-        result = ""
         id = ""
+        age = ""
+        bmi = ""
+        glucose = ""
+        insulin = ""
+        homa = ""
+        leptin = ""
+        adiponectin = ""
+        resistin = ""
+        mcp = ""
+        outcome = ""
     }
 
-    fun iscreateClassificationError(): Boolean {
+    fun isCreateBreastCancerError(): Boolean {
+
         errors.clear()
 
-        try {
-            done = one.toFloat()
-        } catch (e: Exception) {
-            errors.add("one is not a float")
+        if (id != "") {
+            //validate
         }
-
-        try {
-            dtwo = two.toFloat()
-        } catch (e: Exception) {
-            errors.add("two is not a float")
+        else {
+            errors.add("id cannot be empty")
         }
-
         try {
-            dthree = three.toFloat()
+            dage = age.toInt()
         } catch (e: Exception) {
-            errors.add("three is not a float")
+            errors.add("age is not a Int")
         }
-
         try {
-            dfour = four.toFloat()
+            dbmi = bmi.toFloat()
         } catch (e: Exception) {
-            errors.add("four is not a float")
+            errors.add("bmi is not a Float")
         }
-
         try {
-            dfive = five.toFloat()
+            dglucose = glucose.toFloat()
         } catch (e: Exception) {
-            errors.add("five is not a float")
+            errors.add("glucose is not a Float")
         }
-
         try {
-            dsix = six.toFloat()
+            dinsulin = insulin.toFloat()
         } catch (e: Exception) {
-            errors.add("six is not a float")
+            errors.add("insulin is not a Float")
         }
-
         try {
-            dseven = seven.toFloat()
+            dhoma = homa.toFloat()
         } catch (e: Exception) {
-            errors.add("seven is not a float")
+            errors.add("homa is not a Float")
         }
-
         try {
-            deight = eight.toFloat()
+            dleptin = leptin.toFloat()
         } catch (e: Exception) {
-            errors.add("eight is not a float")
+            errors.add("leptin is not a Float")
         }
-
         try {
-            dnine = nine.toFloat()
+            dadiponectin = adiponectin.toFloat()
         } catch (e: Exception) {
-            errors.add("nine is not a float")
+            errors.add("adiponectin is not a Float")
+        }
+        try {
+            dresistin = resistin.toFloat()
+        } catch (e: Exception) {
+            errors.add("resistin is not a Float")
+        }
+        try {
+            dmcp = mcp.toFloat()
+        } catch (e: Exception) {
+            errors.add("mcp is not a Float")
         }
 
         return errors.isNotEmpty()
     }
 
-    fun islistClassificationError(): Boolean {
+    fun createBreastCancer() {
+        model.createClassification(ClassificationVO(id, dage, dbmi, dglucose, dinsulin, dhoma, dleptin, dadiponectin, dresistin, dmcp, outcome))
+        resetData()
+    }
+
+    fun isListBreastCancerError(): Boolean {
         errors.clear()
+        return errors.isNotEmpty()
+    }
+
+
+    fun isSearchBreastCancerIdError(allBreastCancerIds: List<String>): Boolean {
+        errors.clear()
+        if (!allBreastCancerIds.contains(id)) {
+            errors.add("The id is not exist")
+        }
         return errors.isNotEmpty()
     }
 
@@ -157,13 +173,7 @@ class ClassificationBean(c: Context) {
         return errors.toString()
     }
 
-    fun createClassification () {
-        model.createClassification (ClassificationVO(done, dtwo, dthree, dfour, dfive, dsix, dseven, deight, dnine, result, id))
-        resetData()
-    }
 
-    fun deleteClassification() {
-        model.deleteClassification(id)
-        resetData()
-    }
+
 }
+
