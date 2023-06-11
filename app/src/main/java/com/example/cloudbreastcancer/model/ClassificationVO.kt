@@ -3,7 +3,7 @@ package com.example.cloudbreastcancer.model
 import java.util.ArrayList
 
 class ClassificationVO {
-       var id: String = ""
+     var id: String = ""
      var age: Int = 0
      var bmi: Float = 0.0F
      var glucose: Float = 0.0F
@@ -44,7 +44,7 @@ class ClassificationVO {
         this.outcome = outcomex
     }
 
-    constructor (x: BreastCancer) {
+    constructor (x: Classification) {
         id = x.id
         age = x.age
         bmi = x.bmi
@@ -62,7 +62,7 @@ class ClassificationVO {
         return "id = $id,age = $age,bmi = $bmi,glucose = $glucose,insulin = $insulin,homa = $homa,leptin = $leptin,adiponectin = $adiponectin,resistin = $resistin,mcp = $mcp,outcome = $outcome"
     }
 
-    fun toStringList(list: List<BreastCancerVO>): List<String> {
+    fun toStringList(list: List<ClassificationVO>): List<String> {
         val res: MutableList<String> = ArrayList()
         for (i in list.indices) {
             res.add(list[i].toString())
